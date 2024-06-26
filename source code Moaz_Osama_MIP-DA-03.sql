@@ -15,7 +15,6 @@ WHERE
 ;
 
 
-
 --Q2. If NULL values are present, update them with zeros for all columns. 
 
 --//All the rows that have null values had been updated and  become zero values//--
@@ -36,7 +35,6 @@ WHERE
 	  recovered is null
 
 
-
 -- Q3. check total number of rows
 
 --//By using count function the total_rows are "78,386" Rows//--
@@ -45,7 +43,6 @@ SELECT
 	count(*) as Total_Rows 
 FROM
 	[Corona Virus Dataset] ;
-
 
 
 -- Q4. Check what is start_date and end_date
@@ -58,7 +55,6 @@ SELECT
 	MAX(date) AS End_Date
 FROM
 	[Corona Virus Dataset];
-
 
 
 -- Q5. Number of month present in dataset
@@ -81,7 +77,6 @@ FROM (
 
 
 
-
 -- Q6. Find monthly average for confirmed, deaths, recovered
 SELECT 
     Year(Date) As year,
@@ -93,7 +88,6 @@ SELECT
         [Corona Virus Dataset]
  GROUP BY 
         YEAR([Date]), MONTH([Date]);
-
 
 
 -- Q7. Find most frequent value for confirmed, deaths, recovered each month 
@@ -111,7 +105,6 @@ GROUP BY
     CONVERT(varchar(7), [Date], 120)
 ORDER BY 
     Year_Month;
-
 
 
 -- Q8. Find minimum values for confirmed, deaths, recovered per year
@@ -150,7 +143,6 @@ ORDER BY
     Year;
 
 
-
 -- Q10. The total number of case of confirmed, deaths, recovered each month
 
 --//
@@ -167,7 +159,6 @@ GROUP BY
     YEAR(Date), MONTH(Date)
 ORDER BY 
     Year, Month;
-
 
 
 -- Q11. Check how corona virus spread out with respect to confirmed case
@@ -188,8 +179,6 @@ GROUP BY
     YEAR(Date)
 ORDER BY
     Year;
-
-
 
 
 -- Q12. Check how corona virus spread out with respect to death case per month
@@ -214,7 +203,6 @@ ORDER BY
     Year, Month;
 
 
-
 -- Q13. Check how corona virus spread out with respect to recovered case
 --      (Eg.: total confirmed cases, their average, variance & STDEV )
 
@@ -235,7 +223,6 @@ ORDER BY
     Year;
 
 
-
 -- Q14. Find Country having highest number of the Confirmed case
 
 --//The highest country is "Turkey" with Confirmed case equal "823225"//--
@@ -251,7 +238,6 @@ ORDER BY
     Highest_Confirmed_Cases DESC;
 
 
-
 -- Q15. Find Country having lowest number of the death case
 
 --//The lowest Country is "Afghanistan", with Death case equal "1" But there are many other country with that letter but it's the first alphabetically//--
@@ -265,7 +251,6 @@ WHERE
 	Deaths > 0
 ORDER BY
 	Lowest_Deaths_Cases asc;
-
 
 
 -- Q16. Find top 5 countries having highest recovered case
